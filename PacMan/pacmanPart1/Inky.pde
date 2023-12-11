@@ -119,6 +119,10 @@ public class Inky
     else
       return false;
   }  
+   public String toString(){
+    return "[Inky:location=[Location:("+x+","+y+")], direction="+direction+", speed="+speed+", moving="+moving+", bearing="+bearing+"]";
+  }
+
 
 
 

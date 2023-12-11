@@ -117,6 +117,10 @@ public class Pacman
 
     return true;
   }
+  public String toString(){
+    return "[Pacman:location=[Location:("+x+","+y+")], direction="+direction+", speed="+speed+", moving="+moving+", bearing="+bearing+"]";
+  }
+  
 
   /////////////////////////////////////////////////////////////////////////////////////////////
 

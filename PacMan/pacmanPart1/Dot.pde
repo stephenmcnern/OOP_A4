@@ -32,6 +32,9 @@ public class Dot
   {
     return location;
   }
+   public String toString(){
+    return "[Dot:location=[Location:("+x+","+y+")], x="+x+"y="+y+"]";
+  }
   
   /////////////////////////////////////////////////////////////////////////////////////////////
 

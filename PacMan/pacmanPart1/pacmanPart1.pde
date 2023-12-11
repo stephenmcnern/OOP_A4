@@ -6,17 +6,17 @@ void setup()
   game = new Game();
 
   ////pacmanPart1
-  //GameData gameData = new GameData();
-  //println(gameData);
-  //gameData.setScore(500);
-  //gameData.incScore(10);
-  //println("score="+gameData.getScore());
-  //gameData.setLives(3);
-  //gameData.addLife();
-  //gameData.addLife();
-  //gameData.loseLife();
-  //println("lives="+gameData.getLives());
-  //println(gameData);    
+  GameData gameData = new GameData();
+  println(gameData);
+  gameData.setScore(500);
+  gameData.incScore(10);
+  println("score="+gameData.getScore());
+  gameData.setLives(3);
+  gameData.addLife();
+  gameData.addLife();
+  gameData.loseLife();
+  println("lives="+gameData.getLives());
+  println(gameData);    
   
   
   ////pacmanpart2
@@ -36,24 +36,25 @@ void draw()
   game.update();
 } 
 
-void keyPressed()
-{   
-  // 
-  if (key=='a')
+void keyPressed() {
+  if (key == 'a') {
     game.action(Game.LEFT);
-
-  if (key=='s')
+  } else if (key == 's') {
     game.action(Game.RIGHT);
-
-  if (key=='p')
+  } else if (key == 'p') {
     game.action(Game.UP);
-
-  if (key=='l')
+  } else if (key == 'l') {
     game.action(Game.DOWN);
-    
-    
-  // add solution for using arrow keys here
-  
-  
-  
+  } else {
+    // add solution for using arrow keys here
+    if (keyCode == LEFT) {
+      game.action(Game.LEFT);
+    } else if (keyCode == RIGHT) {
+      game.action(Game.RIGHT);
+    } else if (keyCode == UP) {
+      game.action(Game.UP);
+    } else if (keyCode == DOWN) {
+      game.action(Game.DOWN);
+    }
+  }
 }
