@@ -2,7 +2,7 @@ Game game;
 
 void setup()
 {
-  size(640, 840);
+  size(640, 840);  
   game = new Game();
 
   ////pacmanPart1
@@ -16,24 +16,30 @@ void setup()
   gameData.addLife();
   gameData.loseLife();
   println("lives="+gameData.getLives());
-  println(gameData);
-
-
+  println(gameData);    
+  
+  
   ////pacmanpart2
-  //println();
-  //println();
-  //GameCharacter character = new GameCharacter(new Location(5, 5));
-  //println(character);
-  //character.setLocation(new Location(6, 6));
-  //println(character);
-  //println(character.getLocation());
+  println();
+  println();
+  try{
+  GameCharacter character = new GameCharacter(new Location(5, 5));
+  println(character);
+  character.setLocation(new Location(6, 6));
+  println(character);
+  println(character.getLocation());
+}catch(InvalidLocationException e){
+  println(e.getMessage());
+  exit();
+}
 }
 
 
-void draw()
-{
-  game.update();
+void draw() {
+    game.update();
 }
+
+
 
 void keyPressed() {
   if (key == 'a') {

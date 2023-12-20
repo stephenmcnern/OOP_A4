@@ -25,6 +25,7 @@ public class Game {
   private ArrayList<Dot> dots;
   private ArrayList<Ghost> ghosts;
   private boolean dotEatenFlag = false;
+  private Energizer energizer;
 
   public Game() {
     try {
@@ -44,6 +45,7 @@ public class Game {
           dots.add(new Dot(new Location(i, j)));
         }
       }
+      energizer = new Energizer(new Location(3,6));
 
       gameData = new GameData();
     }
@@ -69,6 +71,7 @@ public class Game {
   public void update() {
     drawGrid();
     gameData.display();
+    energizer.display();
 
     for (Dot dot : dots) {
       dot.display();
@@ -107,6 +110,9 @@ public class Game {
       }
     }
   }
+  
+  
+
 
 
   public void drawGrid() {
